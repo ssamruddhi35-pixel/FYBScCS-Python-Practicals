@@ -1,0 +1,403 @@
+Question 1: Basic If Condition
+• Input a number 
+• Check if it is positive 
+• Print result only if condition is true
+
+num = int(input("Enter a number: "))
+
+if num > 0:
+    print("The number is positive")
+Enter a number: 5
+The number is positive
+
+Question 2: If-Else Decision Making
+• Input a number 
+• Check whether it is even or odd 
+• Display appropriate message
+
+num = int(input("Enter a number: "))
+
+if num % 2 == 0:
+    print("Even number")
+else:
+    print("Odd number")
+
+Enter a number: 7
+Odd number
+
+Question 3: Multiple Conditions using elif
+• Input marks 
+• Assign grade: 
+• ≥90 → A 
+• ≥75 → B 
+• ≥50 → C 
+• Else → Fail
+
+marks = int(input("Enter marks: "))
+
+if marks >= 90:
+    print("Grade A")
+elif marks >= 75:
+    print("Grade B")
+elif marks >= 50:
+    print("Grade C")
+else:
+    print("Fail")
+Enter marks: 82
+Grade B
+
+Question 4: Nested If Statements
+• Input age and nationality 
+• Check: 
+o Age ≥ 18 
+o Nationality = “Indian” 
+• Determine eligibility to vote
+
+age = int(input("Enter age: "))
+nationality = input("Enter nationality: ")
+
+if age >= 18:
+    if nationality.lower() == "indian":
+        print("Eligible to vote")
+    else:
+        print("Not eligible to vote")
+else:
+    print("Not eligible to vote")
+
+Enter age: 20
+Enter nationality: Indian
+Eligible to vote
+
+Question 5: Largest of Three Numbers
+• Input three numbers 
+• Find the largest using: 
+o if-elif-else
+• Handle equal values properly
+
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+c = int(input("Enter third number: "))
+
+if a >= b and a >= c:
+    print("Largest number:", a)
+elif b >= a and b >= c:
+    print("Largest number:", b)
+else:
+    print("Largest number:", c)
+
+Enter first number: 10
+Enter second number: 25
+Enter third number: 15
+Largest number: 25
+
+
+Question 6: Leap Year Checker
+• Input year 
+• Check if leap year using: 
+o Divisible by 4 and not by 100 OR divisible by 400
+
+year = int(input("Enter year: "))
+
+if (year % 4 == 0 and year % 100 != 0) or year % 400 == 0:
+    print("Leap year")
+else:
+    print("Not a leap year")
+
+Enter year: 2024
+Leap year
+
+
+Question 7: Simple Calculator using Conditions
+• Input two numbers and an operator (+, -, *, /) 
+• Perform operation using if-elif
+• Handle invalid operator 
+
+a = float(input("Enter first number: "))
+b = float(input("Enter second number: "))
+op = input("Enter operator (+, -, *, /): ")
+
+if op == "+":
+    print("Result:", a + b)
+elif op == "-":
+    print("Result:", a - b)
+elif op == "*":
+    print("Result:", a * b)
+elif op == "/":
+    if b != 0:
+        print("Result:", a / b)
+    else:
+        print("Cannot divide by zero")
+else:
+    print("Invalid operator")
+
+Enter first number: 10
+Enter second number: 5
+Enter operator (+, -, *, /): *
+Result: 50.0
+
+Question 8: Discount Eligibility System
+• Input purchase amount 
+• Apply: 
+o 2000 → 20% discount
+o 1000 → 10% discount
+o Else → No discount 
+• Display final amount 
+
+amount = float(input("Enter purchase amount: "))
+
+if amount >= 2000:
+    discount = amount * 0.20
+elif amount >= 1000:
+    discount = amount * 0.10
+else:
+    discount = 0
+
+final_amount = amount - discount
+
+print("Discount:", discount)
+print("Final amount:", final_amount)
+
+Enter purchase amount: 2500
+Discount: 500.0
+Final amount: 2000.0
+
+Question 9: Triangle Type Identifier
+• Input three sides 
+• Determine: 
+• Equilateral 
+• Isosceles 
+• Scalene
+
+a = int(input("Enter first side: "))
+b = int(input("Enter second side: "))
+c = int(input("Enter third side: "))
+
+if a + b > c and a + c > b and b + c > a:
+    if a == b and b == c:
+        print("Equilateral triangle")
+    elif a == b or b == c or a == c:
+        print("Isosceles triangle")
+    else:
+        print("Scalene triangle")
+else:
+    print("Invalid triangle")
+
+Enter first side: 5
+Enter second side: 5
+Enter third side: 8
+Isosceles triangle
+
+Question 10: Menu-Driven Program
+• Display menu: 
+o Check even/odd 
+o Find largest 
+o Grade system 
+• Take user choice 
+• Execute selected operation using if-elif
+
+print("1. Check Even or Odd")
+print("2. Find Largest of Two Numbers")
+print("3. Grade System")
+
+choice = int(input("Enter your choice: "))
+
+if choice == 1:
+    num = int(input("Enter number: "))
+    if num % 2 == 0:
+        print("Even")
+    else:
+        print("Odd")
+
+elif choice == 2:
+    a = int(input("Enter first number: "))
+    b = int(input("Enter second number: "))
+
+    if a >= b:
+        print("Largest:", a)
+    else:
+        print("Largest:", b)
+
+elif choice == 3:
+    marks = int(input("Enter marks: "))
+
+    if marks >= 90:
+        print("Grade A")
+    elif marks >= 75:
+        print("Grade B")
+    elif marks >= 50:
+        print("Grade C")
+    else:
+        print("Fail")
+
+else:
+    print("Invalid choice")
+
+1. Check Even or Odd
+2. Find Largest of Two Numbers
+3. Grade System
+Enter your choice: 1
+Enter number: 8
+Even
+
+
+Q.1 Write a Python program to check placement 
+eligibility.
+Check if A student is eligible for placement only if 
+CGPA is 7.0 or above and attendance is at least 75%
+
+cgpa = float(input("Enter CGPA: "))
+attendance = float(input("Enter attendance percentage: "))
+
+if cgpa >= 7.0 and attendance >= 75:
+    print("Eligible for placement")
+else:
+    print("Not eligible for placement")
+
+Q.2 Write a decision-making program for loan 
+approval.
+Based on the following conditions:
+A bank allows loan approval only if salary is 
+₹30000 or above and credit score is above 700
+
+salary = float(input("Enter salary: "))
+score = int(input("Enter credit score: "))
+
+if salary >= 30000 and score > 700:
+    print("Loan approved")
+else:
+    print("Loan not approved")
+
+Q.3 Write a Python program to calculate final bill 
+amount.
+Based on:
+An e-commerce website gives 15% discount for 
+purchases above ₹5000, 10% above ₹2000,above 200 otherwise no discount 
+
+amount = float(input("Enter purchase amount: "))
+
+if amount > 5000:
+    discount = amount * 0.15
+elif amount > 2000:
+    discount = amount * 0.10
+else:
+    discount = 0
+
+bill = amount - discount
+
+print("Discount:", discount)
+print("Final bill:", bill)
+
+Q.4 Write a nested if program to check voting 
+eligibility.
+With following conditions:
+A person can vote only if age is 18 or above and 
+nationality is Indian.
+
+age = int(input("Enter age: "))
+nationality = input("Enter nationality: ")
+
+if age >= 18:
+    if nationality.lower() == "indian":
+        print("Eligible to vote")
+    else:
+        print("Not eligible to vote")
+else:
+    print("Not eligible to vote")
+
+Q.5 Write a billing program using conditions.
+A parking system charges ₹20 for the first hour, 
+₹10 for every additional hour, and ₹100 
+maximum per day
+
+hours = int(input("Enter parking hours: "))
+
+if hours <= 0:
+    bill = 0
+elif hours == 1:
+    bill = 20
+else:
+    bill = 20 + (hours - 1) * 10
+
+if bill > 100:
+    bill = 100
+
+print("Parking bill: Rs.", bill)
+
+Q.6 Classify a person into Child, Teen, Adult, or 
+Senior Citizen based on age ranges. Use if-elifelse.
+
+
+age = int(input("Enter age: "))
+
+if age < 13:
+    print("Child")
+elif age <= 19:
+    print("Teen")
+elif age < 60:
+    print("Adult")
+else:
+    print("Senior Citizen")
+
+Q.7 A scholarship is awarded if marks are above 
+85 and family income is below ₹300000. Write a 
+conditional eligibility checker.
+
+marks = float(input("Enter marks: "))
+income = float(input("Enter family income: "))
+
+if marks > 85 and income < 300000:
+    print("Eligible for scholarship")
+else:
+    print("Not eligible for scholarship")
+
+Q.8 A mobile recharge plan offers 2 GB/day if the 
+amount is ₹299 or above, 1 GB/day if the amount 
+is between ₹199 and ₹298, otherwise only 
+talktime benefits. Write a Python program to 
+display the recharge benefit based on the 
+entered amount
+
+amount = int(input("Enter recharge amount: "))
+
+if amount >= 299:
+    print("2 GB data per day")
+elif amount >= 199:
+    print("1 GB data per day")
+else:
+    print("Talktime benefits only")
+
+Q.9 A hospital classifies blood pressure as 
+Normal, Elevated, High Stage 1, or High Stage 2 
+based on systolic reading. Write a Python 
+program to categorize the patient’s blood 
+pressure using conditional statements.
+
+bp = int(input("Enter systolic blood pressure: "))
+
+if bp < 120:
+    print("Normal")
+elif bp < 130:
+    print("Elevated")
+elif bp < 140:
+    print("High Stage 1")
+else:
+    print("High Stage 2")
+
+Q.10 A company bonus policy gives 20% bonus if 
+years of service are 10 or more, 10% if service is 
+between 5 and 9 years, otherwise no bonus. 
+Write a Python program to calculate the 
+employee bonus eligibility.
+
+salary = float(input("Enter salary: "))
+years = int(input("Enter years of service: "))
+
+if years >= 10:
+    bonus = salary * 0.20
+elif years >= 5:
+    bonus = salary * 0.10
+else:
+    bonus = 0
+
+print("Bonus amount: Rs.", bonus)
+print("Total salary with bonus: Rs.", salary + bonus)
