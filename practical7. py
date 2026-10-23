@@ -1,0 +1,230 @@
+Part A: Lists and Tuples
+Q1. Creating Lists and Tuples
+numbers = [10, 20, 30, 40, 50]
+names = ("Amit", "Riya", "Neha")
+
+print(numbers)
+print(type(numbers))
+
+print(names)
+print(type(names))
+
+Q2. Indexing in Lists and Tuples
+numbers = [10, 20, 30, 40, 50]
+values = ("A", "B", "C", "D", "E")
+
+print("First:", numbers[0])
+print("Last:", numbers[-1])
+print("Middle:", numbers[2])
+
+print("First:", values[0])
+print("Last:", values[-1])
+print("Middle:", values[2])
+
+
+Q3. Slicing Lists and Tuples
+numbers = [10, 20, 30, 40, 50]
+values = ("A", "B", "C", "D", "E")
+
+print(numbers[:3])
+print(numbers[-2:])
+print(numbers[::2])
+
+print(values[:3])
+print(values[-2:])
+print(values[::2])
+
+Q4. List Mutability vs Tuple Immutability
+numbers = [10, 20, 30]
+numbers[1] = 50
+print("List:", numbers)
+
+values = (10, 20, 30)
+
+try:
+    values[1] = 50
+except TypeError:
+    print("Tuple cannot be modified")
+
+
+Q5. Adding Elements to a List
+numbers = [10, 20, 30]
+
+numbers.append(40)
+numbers.insert(1, 15)
+
+print(numbers)
+
+Q6. Removing Elements from a List
+numbers = [10, 20, 30, 40]
+
+numbers.remove(20)
+numbers.pop()
+
+print(numbers)
+
+try:
+    numbers.remove(50)
+except ValueError:
+    print("Element not present")
+
+
+Q7. List Methods – sort() and reverse()
+numbers = [40, 10, 30, 20]
+
+numbers.sort()
+print("Ascending:", numbers)
+
+numbers.sort(reverse=True)
+print("Descending:", numbers)
+
+numbers.reverse()
+print("Reversed:", numbers)
+
+
+Q8. Tuple Methods – count() and index()
+values = (10, 20, 10, 30, 10)
+
+print("Count:", values.count(10))
+print("Index:", values.index(20))
+
+if 50 in values:
+    print(values.index(50))
+else:
+    print("Element not present")
+
+Q9. Nested Lists
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+print(matrix[0][1])
+print(matrix[1][2])
+
+matrix[1][2] = 10
+print(matrix)
+
+
+Q10. Converting Between List and Tuple
+numbers = [10, 20, 30]
+values = tuple(numbers)
+print(values)
+
+new_list = list(values)
+new_list[0] = 100
+
+print(new_list)
+
+
+Q11. Iterating Through Lists and Tuples
+numbers = [10, 20, 30, 40]
+values = ("A", "B", "C")
+
+for n in numbers:
+    print(n)
+
+print("Sum:", sum(numbers))
+
+for v in values:
+    print(v)
+
+Q12. Shopping Cart System
+cart = ["Milk", "Bread", "Rice"]
+categories = ("Food", "Clothes", "Electronics")
+
+cart.append("Butter")
+cart.remove("Bread")
+
+print("Shopping Cart:", cart)
+print("Categories:", categories)
+print("Total items:", len(cart))
+
+
+Part B: Basic Indexing and Slicing
+Q1. Basic Indexing in a 2D Array
+matrix = [[1, 2, 3],
+          [4, 5, 6],
+          [7, 8, 9]]
+
+print("First element:", matrix[0][0])
+print("Last element:", matrix[2][2])
+print("Middle element:", matrix[1][1])
+
+
+Q2. Row and Column Access
+matrix = [[1, 2, 3],
+          [4, 5, 6],
+          [7, 8, 9]]
+
+print("Second row:", matrix[1])
+
+print("Third column:")
+for row in matrix:
+    print(row[2])
+
+Q3. Negative Indexing in 2D Arrays
+matrix = [[1, 2, 3],
+          [4, 5, 6],
+          [7, 8, 9]]
+
+print("Last row:", matrix[-1])
+
+print("Last column:")
+for row in matrix:
+    print(row[-1])
+
+print("Bottom-right element:", matrix[-1][-1])
+
+Q4. Slicing Rows in 2D Arrays
+matrix = [[1, 2, 3],
+          [4, 5, 6],
+          [7, 8, 9]]
+
+print("First two rows:", matrix[0:2])
+print("Last two rows:", matrix[-2:])
+
+
+Q5. Partial Slicing (Submatrix Extraction)
+matrix = [[1, 2, 3],
+          [4, 5, 6],
+          [7, 8, 9]]
+
+sub = [row[0:2] for row in matrix[0:2]]
+
+print("Submatrix:")
+print(sub)
+
+
+Q6. Basic Indexing in NumPy
+import numpy as np
+
+arr = np.array([[1, 2, 3],
+                [4, 5, 6],
+                [7, 8, 9]])
+
+print("Element at (1,2):", arr[1, 2])
+print("Entire row:", arr[1, :])
+print("Entire column:", arr[:, 1])
+
+Q7. Slicing Rows and Columns in NumPy
+import numpy as np
+
+arr = np.array([[1, 2, 3],
+                [4, 5, 6],
+                [7, 8, 9]])
+
+print("First two rows:")
+print(arr[0:2, :])
+
+print("Last column:")
+print(arr[:, -1])
+
+Q8. Submatrix Extraction in NumPy
+import numpy as np
+
+arr = np.array([[1, 2, 3, 4],
+                [5, 6, 7, 8],
+                [9, 10, 11, 12],
+                [13, 14, 15, 16]])
+
+sub = arr[1:3, 1:3]
+
+print(sub)
