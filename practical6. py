@@ -1,0 +1,189 @@
+Part A: Main Practical Questions
+Q1. Creating and Accessing a 2D Array
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+print("Entire matrix:")
+print(matrix)
+
+print("First row:", matrix[0])
+print("Element at (2,3):", matrix[1][2])
+
+Q2. Matrix Traversal
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+print("Row-wise:")
+for row in matrix:
+    for element in row:
+        print(element, end=" ")
+    print()
+
+print("Column-wise:")
+for j in range(3):
+    for i in range(3):
+        print(matrix[i][j], end=" ")
+    print()
+
+
+Q3. Sum of Rows and Columns
+rows = int(input("Enter rows: "))
+cols = int(input("Enter columns: "))
+
+matrix = []
+for i in range(rows):
+    row = list(map(int, input().split()))
+    matrix.append(row)
+
+for i in range(rows):
+    print("Sum of row", i + 1, "=", sum(matrix[i]))
+
+for j in range(cols):
+    total = 0
+    for i in range(rows):
+        total += matrix[i][j]
+    print("Sum of column", j + 1, "=", total)
+
+Q4. Matrix Addition
+A = [[1, 2], [3, 4]]
+B = [[5, 6], [7, 8]]
+
+result = []
+
+for i in range(2):
+    row = []
+    for j in range(2):
+        row.append(A[i][j] + B[i][j])
+    result.append(row)
+
+print("Result:", result)
+
+Q5. Transpose of a Matrix
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6]
+]
+
+transpose = []
+
+for j in range(3):
+    row = []
+    for i in range(2):
+        row.append(matrix[i][j])
+    transpose.append(row)
+
+print("Original matrix:", matrix)
+print("Transpose:", transpose)
+
+Q6. NumPy Array Creation
+import numpy as np
+
+a = np.array([1, 2, 3, 4])
+b = np.zeros(4)
+c = np.ones(4)
+
+for arr in [a, b, c]:
+    print("Array:", arr)
+    print("Shape:", arr.shape)
+    print("Data type:", arr.dtype)
+
+Q7. Array Indexing and Slicing
+import numpy as np
+
+a = np.array([
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+])
+
+print("Element:", a[1, 2])
+print("First row:", a[0, :])
+print("Second column:", a[:, 1])
+print("Slicing:", a[0:2, 1:3])
+
+
+Q8. Arithmetic Operations on Arrays
+import numpy as np
+
+a = np.array([10, 20, 30])
+b = np.array([2, 4, 5])
+
+print("Addition:", a + b)
+print("Subtraction:", a - b)
+print("Multiplication:", a * b)
+
+x = [10, 20, 30]
+y = [2, 4, 5]
+
+print("List addition:", [x[i] + y[i] for i in range(3)])
+
+
+Q9. Statistical Operations
+import numpy as np
+
+a = np.array([10, 20, 30, 40, 50])
+
+print("Mean:", np.mean(a))
+print("Median:", np.median(a))
+print("Standard deviation:", np.std(a))
+
+
+Q10. Reshaping Arrays
+import numpy as np
+
+a = np.arange(1, 13)
+
+print("1D Array:", a)
+
+b = a.reshape(3, 4)
+print("3 x 4 Array:")
+print(b)
+
+c = a.reshape(2, 6)
+print("2 x 6 Array:")
+print(c)
+
+
+Q11. Matrix Operations
+import numpy as np
+
+A = np.array([[1, 2], [3, 4]])
+B = np.array([[5, 6], [7, 8]])
+
+print("Matrix multiplication:")
+print(np.dot(A, B))
+
+print("Transpose of A:")
+print(A.T)
+
+print("Manual multiplication:")
+for i in range(2):
+    for j in range(2):
+        result = 0
+        for k in range(2):
+            result += A[i][k] * B[k][j]
+        print(result, end=" ")
+    print()
+
+
+Q12. Real-World Dataset Analysis
+import numpy as np
+
+marks = np.array([
+    [80, 75, 90],
+    [65, 70, 85],
+    [95, 88, 92]
+])
+
+for i in range(len(marks)):
+    print("Student", i + 1,
+          "Average:", np.mean(marks[i]))
+
+print("Highest marks:", np.max(marks))
+print("Lowest marks:", np.min(marks))
