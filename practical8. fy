@@ -1,0 +1,111 @@
+Question 1: Creating a Dictionary
+student = {
+    "Name": "Asha",
+    "Age": 18,
+    "Marks": 90
+}
+
+print(student)
+print(type(student))
+
+Question 2: Accessing Values (Indexing)
+student = {
+    "Name": "Asha",
+    "Age": 18,
+    "Marks": 90
+}
+
+print(student["Name"])
+print(student["Age"])
+print(student["Marks"])
+
+print(student["Class"])  # KeyError
+
+Question 4: Adding and Updating Elements
+student = {
+    "Name": "Asha",
+    "Age": 18,
+    "Marks": 90
+}
+
+student["City"] = "Mumbai"
+student["Marks"] = 95
+
+print(student)
+
+Question 5: Removing Elements
+student = {
+    "Name": "Asha",
+    "Age": 18,
+    "Marks": 90
+}
+
+student.pop("Age")
+del student["Marks"]
+
+print(student)
+
+student.pop("Class", "Not Found")
+
+Question 6: Iterating Through Dictionary
+student = {
+    "Name": "Asha",
+    "Age": 18,
+    "Marks": 90
+}
+
+print("Keys:")
+for key in student:
+    print(key)
+
+print("Values:")
+for value in student.values():
+    print(value)
+
+print("Key-Value Pairs:")
+for key, value in student.items():
+    print(key, value)
+
+Question 7: Dictionary Methods — keys(), values(), items()
+student = {
+    "Name": "Asha",
+    "Age": 18,
+    "Marks": 90
+}
+
+keys = list(student.keys())
+values = list(student.values())
+items = list(student.items())
+
+print(keys)
+print(values)
+print(items)
+
+Question 8: Counting Frequency of Characters
+text = input("Enter a string: ")
+frequency = {}
+
+for char in text:
+    frequency[char] = frequency.get(char, 0) + 1
+
+print(frequency)
+
+Question 9: Nested Dictionary
+students = {
+    "S1": {"Name": "Asha", "Marks": 90},
+    "S2": {"Name": "Ravi", "Marks": 85}
+}
+
+print(students["S1"]["Name"])
+
+students["S1"]["Marks"] = 95
+
+print(students)
+
+Question 10: Dictionary Merging Using update()
+dict1 = {"a": 1, "b": 2}
+dict2 = {"b": 3, "c": 4}
+
+dict1.update(dict2)
+
+print(dict1)
