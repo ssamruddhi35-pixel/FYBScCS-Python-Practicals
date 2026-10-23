@@ -1,0 +1,423 @@
+PRACTICAL 4
+
+
+Question 1: Understand for loop syntax and range
+Basic for loop
+ Print numbers from 1 to 10 
+ Modify to print only even numbers 
+ Explain how range(start, stop, step) works 
+
+for i in range(1, 11):
+    print(i)
+
+for i in range(2, 11, 2):
+    print(i)
+
+Question 2: While Loop Fundamentals
+ Print numbers from 1 to 10 using while
+ Convert same logic from for to while
+ Compare both approaches 
+i = 1
+
+while i <= 10:
+    print(i)
+    i += 1
+
+Question 3: Sum and Average Using Loop
+ Input n numbers 
+ Compute: 
+ Sum 
+ Average 
+ Use loop for accumulation
+
+n = int(input("Enter how many numbers: "))
+total = 0
+
+for i in range(n):
+    num = float(input("Enter a number: "))
+    total += num
+
+if n > 0:
+    average = total / n
+    print("Sum =", total)
+    print("Average =", average)
+else:
+    print("Enter a positive number of values.")
+
+Question 4: Factorial Calculation
+ Input a number 
+ Calculate factorial using: 
+ for loop 
+ while loop 
+ Compare implementations
+
+n = int(input("Enter a number: "))
+fact = 1
+
+for i in range(1, n + 1):
+    fact *= i
+
+print("Factorial =", fact)
+
+n = int(input("Enter a number: "))
+fact = 1
+i = 1
+
+while i <= n:
+    fact *= i
+    i += 1
+
+print("Factorial =", fact)
+
+
+Question 5: Multiplication Table Generator
+ Input a number 
+ Print its multiplication table up to 10 
+ Format output neatly
+
+
+n = int(input("Enter a number: "))
+
+for i in range(1, 11):
+    print(n, "x", i, "=", n * i)
+
+Question 6: Number Reversal and Palindrome Check
+ Input a number 
+ Reverse it using loop 
+ Check if palindrome 
+
+num = int(input("Enter a number: "))
+original = num
+reverse = 0
+
+while num > 0:
+    digit = num % 10
+    reverse = reverse * 10 + digit
+    num = num // 10
+
+print("Reversed number =", reverse)
+
+if original == reverse:
+    print("Palindrome")
+else:
+    print("Not a palindrome")
+
+Question 7: Count Digits, Even and Odd
+ Input a number 
+ Count: 
+ Total digits 
+ Even digits 
+ Odd digits
+
+
+num = int(input("Enter a number: "))
+num = abs(num)
+total = 0
+even = 0
+odd = 0
+
+if num == 0:
+    total = 1
+    even = 1
+
+while num > 0:
+    digit = num % 10
+    total += 1
+
+    if digit % 2 == 0:
+        even += 1
+    else:
+        odd += 1
+
+    num = num // 10
+
+print("Total digits =", total)
+print("Even digits =", even)
+print("Odd digits =", odd)
+
+Question 8: Prime Number Checker
+ Input a number 
+ Check if prime using loop 
+ Optimize by reducing unnecessary iterations
+
+n = int(input("Enter a number: "))
+prime = True
+
+if n < 2:
+    prime = False
+else:
+    i = 2
+    while i * i <= n:
+        if n % i == 0:
+            prime = False
+            break
+        i += 1
+
+if prime:
+    print("Prime number")
+else:
+    print("Not a prime number")
+
+Question 9: Fibonacci Series
+ Input number of terms 
+ Generate Fibonacci sequence 
+ Explain iteration pattern 
+
+
+n = int(input("Enter number of terms: "))
+a = 0
+b = 1
+
+for i in range(n):
+    print(a, end=" ")
+    a, b = b, a + b
+
+Question 10: Understand nested loops
+ Print patterns like: 
+*
+**
+***
+****
+ Extend to reverse pattern 
+Print:
+1
+1 2
+1 2 3
+1 2 3 4
+Modify to reverse pyramid
+
+(a) Star Pattern
+
+for i in range(1, 5):
+    for j in range(i):
+        print("*", end="")
+    print()
+
+*
+**
+***
+****
+
+b) Reverse star pattern
+
+for i in range(4, 0, -1):
+    for j in range(i):
+        print("*", end="")
+    print()
+
+****
+***
+**
+*
+
+c) Number pattern
+
+for i in range(1, 5):
+    for j in range(1, i + 1):
+        print(j, end=" ")
+    print()
+
+1
+1 2
+1 2 3
+1 2 3 4
+
+d) Reverse number pyramid
+
+for i in range(4, 0, -1):
+    for j in range(1, i + 1):
+        print(j, end=" ")
+    print()
+
+1 2 3 4
+1 2 3
+1 2
+1
+
+Q.1 for i in range(1, 10):
+ print(i)
+The requirement is to print numbers from 1 to 10,
+but this code does not print the last number.
+ Identify the error 
+ Correct the code
+
+for i in range(1, 11):
+    print(i)
+
+Q.2 
+for i in range(1, 6):
+ print(i)
+Predict the output
+
+for i in range(1, 6):
+    print(i)
+1
+2
+3
+4
+5
+
+
+Q.3
+for i in range(3):
+for j in range(3):
+ print("*")
+This pattern program gives an error.
+ Identify the syntax/indentation issue 
+ Correct the nested loop code
+
+for i in range(3):
+    for j in range(3):
+        print("*")
+*
+*
+*
+*
+*
+*
+*
+*
+*
+
+
+
+Q.4 a = 0
+b = 1
+for i in range(5):
+ print(a)
+ a = b
+ b = a + b
+The Fibonacci sequence is not generated correctly.
+ Find the update error 
+Rewrite the correct logic
+
+a = 0
+b = 1
+
+for i in range(5):
+    print(a)
+    a, b = b, a + b
+
+0
+1
+1
+2
+3
+
+
+Q.5 num = 1
+while num <= 5:
+ print(num)
+This loop never stops.
+ What is the error? 
+ Rewrite the corrected code
+
+num = 1
+
+while num <= 5:
+    print(num)
+    num += 1
+
+1
+2
+3
+4
+5
+
+ 
+Q.6 i = 1
+while i <= 5:
+ print(i * 2)
+ i += 1
+Predict the output.
+
+i = 1
+
+while i <= 5:
+    print(i * 2)
+    i += 1
+
+2
+4
+6
+8
+10
+
+
+Q.7
+fact = 1
+for i in range(1, 5):
+ fact *= i
+print(fact)
+Predict the output.
+
+fact = 1
+
+for i in range(1, 5):
+    fact *= i
+
+print(fact)
+
+24
+
+
+Q.8 n = 5
+fact = 0
+for i in range(1, n+1):
+ fact *= i
+print(fact)
+The factorial output is incorrect.
+ Identify the logical error 
+ Correct the factorial program
+
+n = 5
+fact = 1
+
+for i in range(1, n + 1):
+    fact *= i
+
+print(fact)
+
+
+
+120
+
+
+
+
+
+
+
+Q.9 
+a = 0
+b = 1
+for i in range(5):
+ print(a, end=" ")
+ a, b = b, a + b
+Predict the output.
+
+a = 0
+b = 1
+
+for i in range(5):
+    print(a, end=" ")
+    a, b = b, a + b
+
+0 1 1 2 3
+
+
+Q.10
+for i in range(3):
+ for j in range(i + 1):
+ print("*", end="")
+ print()
+Predict the output
+
+for i in range(3):
+    for j in range(i + 1):
+        print("*", end="")
+    print()
+
+*
+**
+***
