@@ -17,7 +17,8 @@ student = {
 
 print(student["Name"])
 print(student["Age"])
-print(student["Marks"])
+print(student["Marks"]) 
+
 
 print(student["Class"])  # KeyError
 
