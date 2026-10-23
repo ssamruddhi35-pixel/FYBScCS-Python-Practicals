@@ -1,0 +1,371 @@
+PRACTICAL 2
+
+Question 1: 
+• Take user input for name and age
+• Display output using: 
+o Simple print 
+o Formatted string (f-string)
+• Compare outputs
+
+name = input("Enter your name: ")
+age = int(input("Enter your age: "))
+
+print("My name is", name, "and my age is", age)
+print(f"My name is {name} and my age is {age}")
+
+
+Enter your name: Sia
+Enter your age: 17
+My name is Sia and my age is 17
+My name is Sia and my age is 17
+
+Question 2: Numeric Input Handling: 
+• Take two numbers as input 
+• Perform addition, subtraction, multiplication, division 
+• Observe incorrect results without type conversion 
+• Fix using int() or float()
+
+a = float(input("Enter first number: "))
+b = float(input("Enter second number: "))
+
+print("Addition:", a + b)
+print("Subtraction:", a - b)
+print("Multiplication:", a * b)
+
+if b != 0:
+    print("Division:", a / b)
+else:
+    print("Division by zero is not allowed")
+
+
+Question 3: Expression Evaluation 
+• Accept three numbers 
+• Compute: 
+ o Sum 
+ o Average 
+ o Expression: (a + b) * c / 2 
+• Display results clearly
+
+a = float(input("Enter first number: "))
+b = float(input("Enter second number: "))
+c = float(input("Enter third number: "))
+
+print("Sum:", a + b + c)
+print("Average:", (a + b + c) / 3)
+print("Expression:", (a + b) * c / 2)
+
+
+Question 4: Operator Precedence Analysis 
+• Evaluate expressions: 
+o 10 + 5 * 2 
+o (10 + 5) * 2 
+o 100 / 5 + 3 * 2 
+• Predict output before execution 
+• Verify and explain differences
+
+print(10 + 5 * 2)
+print((10 + 5) * 2)
+print(100 / 5 + 3 * 2)
+
+20
+30
+26.0
+
+Question 5: Real-Life Calculation – Salary Breakdown 
+• Input basic salary 
+• Calculate: 
+o HRA (20%) 
+o DA (10%) 
+o Net salary 
+• Display detailed breakdown
+
+
+salary = float(input("Enter basic salary: "))
+
+hra = salary * 0.20
+da = salary * 0.10
+net_salary = salary + hra + da
+
+print("Basic Salary:", salary)
+print("HRA:", hra)
+print("DA:", da)
+print("Net Salary:", net_salary)
+
+
+Question 6: Area and Perimeter Calculator 
+• Input dimensions (rectangle, circle) 
+• Compute: 
+o Area 
+o Perimeter/Circumference 
+• Use appropriate formulas and formatting
+
+
+import math
+
+length = float(input("Enter rectangle length: "))
+breadth = float(input("Enter rectangle breadth: "))
+
+print("Rectangle Area:", length * breadth)
+print("Rectangle Perimeter:", 2 * (length + breadth))
+
+radius = float(input("Enter circle radius: "))
+
+print("Circle Area:", math.pi * radius ** 2)
+print("Circle Circumference:", 2 * math.pi * radius)
+
+
+Question 7: Unit Conversion Tool 
+• Convert: 
+o Kilometers to meters
+o Celsius to Fahrenheit
+o Rupees to dollars (use fixed rate) 
+• Display results with units
+
+a, b, c = map(int, input("Enter three numbers: ").split())
+
+print(f"Sum = {a + b + c}")
+print(f"Product = {a * b * c}")
+
+
+Question 8: Multi-Input Single-Line Processing 
+• Take multiple inputs in one line (e.g., a, b, c) 
+• Convert and compute sum and product 
+• Display formatted output
+
+a, b, c = map(int, input("Enter three numbers: ").split())
+
+print(f"Sum = {a + b + c}")
+print(f"Product = {a * b * c}")
+
+Sum = 9
+Product = 24
+
+
+Question 9: Expression-Based Grading System 
+• Input marks of 3 subjects 
+• Calculate total and percentage
+• Display grade based on percentage
+
+m1 = float(input("Enter marks of subject 1: "))
+m2 = float(input("Enter marks of subject 2: "))
+m3 = float(input("Enter marks of subject 3: "))
+
+total = m1 + m2 + m3
+percentage = total / 3
+
+print("Total:", total)
+print("Percentage:", percentage)
+
+if percentage >= 90:
+    print("Grade A")
+elif percentage >= 75:
+    print("Grade B")
+elif percentage >= 60:
+    print("Grade C")
+elif percentage >= 40:
+    print("Grade D")
+else:
+    print("Grade F")
+
+
+Question 10: Error Analysis in Expressions 
+• Run incorrect expressions like: 
+o Division by zero
+o String + number 
+• Observe errors
+• Modify code to handle/prevent errors
+a = 10
+b = 0
+
+if b != 0:
+    print("Division:", a / b)
+else:
+    print("Error: Division by zero is not allowed")
+
+x = "10"
+y = 5
+
+try:
+    print(int(x) + y)
+except TypeError:
+    print("Error: Incompatible data types")
+
+Error: Division by zero is not allowed
+15
+
+
+Q.1 
+Write a Python program that accepts the total units consumed and calculates the final electricity bill amount 
+by clearly showing fixed charges, variable charges, and total payable amount. Condition: fixed charge of ₹150 
+for the first 100 units and a variable charge of ₹6 per unit for every unit consumed above 100.
+
+
+units = int(input("Enter units consumed: "))
+
+fixed = 150
+
+if units > 100:
+    variable = (units - 100) * 6
+else:
+    variable = 0
+
+total = fixed + variable
+
+print("Fixed Charges: Rs.", fixed)
+print("Variable Charges: Rs.", variable)
+print("Total Payable: Rs.", total)
+
+
+Q.2 
+Write a Python program that accepts distance (in km) and time (in hours) as input and calculates the average 
+speed in km/h with proper units. What is the answer if A vehicle travels 180 kilometers in 3 hours?
+
+
+distance = float(input("Enter distance in km: "))
+time = float(input("Enter time in hours: "))
+
+speed = distance / time
+
+print("Average Speed:", speed, "km/h")
+
+Q.3
+Write a Python program to calculate the final payable amount by clearly showing discount amount, GST 
+amount, and net bill. Find the payable amount for: A shopping bill amount is ₹2500 with a discount of 10% and 
+GST of 18% applied after discount.
+
+bill = float(input("Enter bill amount: "))
+
+discount = bill * 10 / 100
+amount = bill - discount
+gst = amount * 18 / 100
+net_bill = amount + gst
+
+print("Discount: Rs.", discount)
+print("GST: Rs.", gst)
+print("Net Bill: Rs.", net_bill)
+
+Q.4
+Write a Python program to compare the outputs for at least five arithmetic expressions and explain the 
+difference. Use the following to test your program: Take two numbers 25 and 4 and perform both integer 
+division (//) and float division (/).
+
+
+a = 25
+b = 4
+
+print("Addition:", a + b)
+print("Subtraction:", a - b)
+print("Multiplication:", a * b)
+print("Integer Division:", a // b)
+print("Float Division:", a / b)
+
+Addition: 29
+Subtraction: 21
+Multiplication: 100
+Integer Division: 6
+Float Division: 6.25
+
+
+Q.5
+Write a Python program to estimate the total fuel cost for the trip. Find out the fuel cost for the following: A 
+car travels 240 km with a mileage of 15 km/litre and fuel price of ₹105 per litre.
+
+distance = 240
+mileage = 15
+price = 105
+
+fuel = distance / mileage
+cost = fuel * price
+
+print("Fuel Required:", fuel, "litres")
+print("Total Fuel Cost: Rs.", cost) 
+
+
+
+Q.6 
+Write a Python program to identify the topper’s marks and display the student position. Who is the topper 
+among these? Enter marks of 5 students in a single line separated by spaces: 78 91 85 67 95.
+
+marks = list(map(int, input("Enter marks of 5 students: ").split()))
+
+topper = max(marks)
+position = marks.index(topper) + 1
+
+print("Topper's Marks:", topper)
+print("Student Position:", position)
+
+Topper's Marks: 95
+Student Position: 5
+
+Q.7
+Write a Python program to estimate the approximate monthly EMI using arithmetic expressions. Calculate for: 
+A loan amount of ₹500000 is to be repaid in 24 months with simple interest of 12% annually. 
+
+marks = list(map(int, input("Enter marks of 5 students: ").split()))
+
+topper = max(marks)
+position = marks.index(topper) + 1
+
+print("Topper's Marks:", topper)
+print("Student Position:", position)
+
+
+Q.8
+Use the expressions 10 + 5 * 2, (10 + 5) * 2, 100 / 5 + 3 * 2, 50 - 6 / 2, and 8 + 2 ** 3. Predict the outputs first, 
+then write a Python program to verify operator precedence. 
+
+
+print(10 + 5 * 2)
+print((10 + 5) * 2)
+print(100 / 5 + 3 * 2)
+print(50 - 6 / 2)
+print(8 + 2 ** 3)
+
+20
+30
+26.0
+47.0
+16
+
+
+Q.9 
+Write a Python program to calculate the tip amount, final bill, and each friend’s contribution. Calculate for: A 
+restaurant bill of ₹1800 is shared among 4 friends with an additional 8% tip. 
+
+bill = 1800
+friends = 4
+
+tip = bill * 8 / 100
+total = bill + tip
+share = total / friends
+
+print("Tip Amount: Rs.", tip)
+print("Final Bill: Rs.", total)
+print("Each Friend Pays: Rs.", share)
+
+
+
+Q.10
+Write a Python program to calculate BMI using the formula weight / height² and categorize it as Underweight, 
+Normal, Overweight, or Obese. Calculate for the following person and categorize him: A person has weight 72 
+kg and height 1.75 meters
+
+
+weight = 72
+height = 1.75
+
+bmi = weight / (height ** 2)
+
+print("BMI:", round(bmi, 2))
+
+if bmi < 18.5:
+    print("Underweight")
+elif bmi < 25:
+    print("Normal")
+elif bmi < 30:
+    print("Overweight")
+else:
+    print("Obese")
+
+BMI: 23.51
+Normal
