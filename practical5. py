@@ -1,0 +1,123 @@
+Part A: Practical Questions
+Q1. Using break in a Loop
+for i in range(1, 11):
+    if i == 5:
+        break
+    print(i) 
+
+
+Q2. Using continue in a Loop
+for i in range(1, 11):
+    if i % 3 == 0:
+        continue
+    print(i)
+
+Q3. Difference Between break and continue
+Program 1: Using break
+for i in range(1, 11):
+    if i == 5:
+        break
+    print(i)
+
+Program 2: Using continue
+
+for i in range(1, 11):
+    if i == 5:
+        continue
+    print(i)
+
+Q4. Searching in a List
+numbers = list(map(int, input("Enter numbers separated by spaces: ").split()))
+search = int(input("Enter number to search: "))
+
+for i in range(len(numbers)):
+    if numbers[i] == search:
+        print("Number found at position", i + 1)
+        break
+else:
+    print("Number not found")
+
+Q5. First Divisible Number Finder
+n = int(input("Enter a number: "))
+
+if n <= 0:
+    print("Enter a positive number")
+else:
+    for i in range(1, 101):
+        if i % n == 0:
+            print("First divisible number is", i)
+            break
+
+
+Q6. Skip Negative Numbers
+numbers = list(map(int, input("Enter numbers separated by spaces: ").split()))
+
+for n in numbers:
+    if n < 0:
+        continue
+    if n > 0:
+        print(n)
+
+
+Q7. Sum of Valid Inputs Only
+total = 0
+
+while True:
+    n = int(input("Enter a number (0 to stop): "))
+
+    if n == 0:
+        break
+    if n < 0:
+        continue
+
+    total += n
+
+print("Sum =", total)
+
+Q8. Password Retry System
+password = "python123"
+
+for i in range(3):
+    entered = input("Enter password: ")
+
+    if entered == password:
+        print("Login successful")
+        break
+else:
+    print("Login failed after 3 attempts")
+
+Q9. Using pass in Empty Blocks
+for i in range(1, 6):
+    pass
+
+print("Loop completed")
+
+
+Q10. Pattern with Conditional Skipping
+for i in range(1, 6):
+    for j in range(1, 6):
+        if j % 2 == 0:
+            continue
+        print(j, end=" ")
+    print()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
